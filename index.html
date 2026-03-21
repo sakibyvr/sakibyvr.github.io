@@ -3,13 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Supriyo Talukder | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Najmus Sakib | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f4ff;
+      color: #241b35;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #5b21b6, #7c3aed);
+      color: white;
+      padding: 28px 20px 80px;
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e9d5ff;
+    }
+
+    .resume-btn {
+      background: white;
+      color: #5b21b6 !important;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      background: #f3e8ff;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      color: #e9d5ff;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-content h2 {
+      font-size: 2.7rem;
+      max-width: 760px;
+      margin-bottom: 18px;
+    }
+
+    .hero-content p {
+      max-width: 760px;
+      color: #f3e8ff;
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn.primary {
+      background: #c084fc;
+      color: #241b35;
+    }
+
+    .btn.secondary {
+      border: 1px solid #ddd6fe;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 20px;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      margin-bottom: 6px;
+      color: #4c1d95;
+    }
+
+    .section-header p {
+      color: #6b7280;
+    }
+
+    .about-card,
+    .contact-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(91, 33, 182, 0.08);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(91, 33, 182, 0.08);
+      color: #241b35;
+      transition: 0.3s;
+      display: block;
+      border: 1px solid #ede9fe;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(91, 33, 182, 0.14);
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      color: #4c1d95;
+    }
+
+    .project-card p {
+      margin-bottom: 16px;
+      color: #4b5563;
+    }
+
+    .project-card span {
+      color: #7c3aed;
+      font-weight: bold;
+    }
+
+    .contact-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      background: #5b21b6;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: #7c3aed;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
     <nav class="navbar">
-      <h1 class="logo">Supriyo Talukder</h1>
+      <h1 class="logo">Najmus Sakib</h1>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -19,11 +267,11 @@
     </nav>
 
     <div class="hero-content">
-      <p class="tag">IT Support | Active Directory Lab | Troubleshooting</p>
-      <h2>Building practical IT skills through hands-on projects</h2>
+      <p class="tag">Portfolio | Projects | Professional Profile</p>
+      <h2>Building a clean and professional online presence</h2>
       <p>
-        I’m focused on IT support, system administration, and home lab projects.
-        I enjoy learning by building, troubleshooting, and documenting real setups.
+        Welcome to my portfolio website. Here you can find a quick introduction,
+        featured projects, and ways to connect with me professionally.
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="btn primary">View Projects</a>
@@ -40,10 +288,9 @@
       </div>
       <div class="about-card">
         <p>
-          I am an aspiring IT professional with hands-on experience building an
-          Active Directory home lab in VirtualBox. My projects focus on Windows
-          Server, domain controller setup, client domain join, user management,
-          and troubleshooting common IT issues.
+          Hi, I’m Najmus Sakib. This portfolio highlights my background,
+          selected work, and professional links. I’m building this site to
+          present my projects in a simple, modern, and accessible way.
         </p>
       </div>
     </section>
@@ -55,29 +302,27 @@
       </div>
 
       <div class="project-grid">
-        <a href="https://github.com/yourusername/active-directory-homelab" target="_blank" class="project-card">
-          <h3>Active Directory Home Lab</h3>
+        <a href="https://github.com/sakibyvr" target="_blank" class="project-card">
+          <h3>GitHub Projects</h3>
           <p>
-            Built a Windows Server 2022 domain controller in VirtualBox with AD DS,
-            DNS, and domain-joined client testing.
+            Explore my repositories, coding work, and technical projects on GitHub.
           </p>
           <span>View Project →</span>
         </a>
 
-        <a href="https://github.com/yourusername/project-2" target="_blank" class="project-card">
-          <h3>IT Support Documentation</h3>
+        <a href="https://github.com/sakibyvr" target="_blank" class="project-card">
+          <h3>Portfolio Website</h3>
           <p>
-            Created step-by-step troubleshooting notes and setup guides for common
-            support tasks and lab configurations.
+            A responsive personal portfolio designed to present my profile,
+            work, and contact information clearly.
           </p>
           <span>View Project →</span>
         </a>
 
-        <a href="https://github.com/yourusername/project-3" target="_blank" class="project-card">
-          <h3>Networking Practice</h3>
+        <a href="https://github.com/sakibyvr" target="_blank" class="project-card">
+          <h3>More Work</h3>
           <p>
-            Practiced IP setup, DNS configuration, connectivity testing, and lab
-            network troubleshooting in a virtual environment.
+            Additional work, experiments, and future project updates will be added here.
           </p>
           <span>View Project →</span>
         </a>
@@ -92,20 +337,20 @@
 
       <div class="contact-card">
         <p>
-          I’m open to IT support, help desk, and junior system administration opportunities.
+          I’m open to professional connections, collaboration, and new opportunities.
         </p>
 
         <div class="contact-links">
-          <a href="mailto:yourmail@example.com">Email Me</a>
-          <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
-          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+          <a href="mailto:sakibyvr@gmail.com">Email Me</a>
+          <a href="https://www.linkedin.com/in/sakibnyx" target="_blank">LinkedIn</a>
+          <a href="https://github.com/sakibyvr" target="_blank">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Supriyo Talukder. All rights reserved.</p>
+    <p>© 2026 Najmus Sakib. All rights reserved.</p>
   </footer>
 </body>
 </html>
