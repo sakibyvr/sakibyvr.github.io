@@ -1,263 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Najmus Sakib | IT Support Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Najmus Sakib | IT Support Technician, Vancouver BC</title>
+<meta name="description" content="Najmus Sakib, IT Support Technician in Vancouver, BC. Five years across IT support, Tier 2 platform support and field technician work. CompTIA A+ certified. Windows, macOS, Active Directory, Microsoft 365, networking and ticketing.">
+<meta property="og:title" content="Najmus Sakib | IT Support Technician">
+<meta property="og:description" content="Hardware, software, networking and people. Five years of IT support in Vancouver and abroad. CompTIA A+ certified.">
+<meta property="og:url" content="https://sakibyvr.github.io/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F2F4F7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232456E6'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4F7; --surface:#FFFFFF; --ink:#0F1B2D; --muted:#56637A; --line:#D7DDE6;
+  --signal:#2456E6; --signal-soft:#E3EAFE; --ok:#12936B; --amber:#D98A0B;
+  --console:#0E1726; --console-ink:#D7E2F5; --console-dim:#7D8BA6;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --wrap:1180px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1320; --surface:#131D2E; --ink:#E7ECF5; --muted:#97A3B8; --line:#24324A;
+    --signal:#6F96FF; --signal-soft:#1A2A4D; --ok:#3CCB97; --amber:#F2B341;
+    --console:#070C16; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C1320; --surface:#131D2E; --ink:#E7ECF5; --muted:#97A3B8; --line:#24324A;
+  --signal:#6F96FF; --signal-soft:#1A2A4D; --ok:#3CCB97; --amber:#F2B341;
+  --console:#070C16; color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--signal);color:#fff;padding:8px 14px;border-radius:8px;z-index:99}
+.skip:focus{left:12px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600}
+.brand-mark{width:36px;height:36px;border-radius:10px;background:var(--signal);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:13px;line-height:1.2}
+.nav-links{display:flex;gap:22px;margin-left:auto;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+.nav-links a:hover{color:var(--ink)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.icon-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;transition:transform .15s ease,background .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--signal);color:#fff}
+.btn-primary:hover{background:color-mix(in srgb,var(--signal) 86%,#000)}
+.btn-ghost{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-sm{padding:9px 14px;font-size:14px;border-radius:10px}
+.glyph{width:20px;height:20px;display:inline-block;background:currentColor;-webkit-mask:var(--g) center/contain no-repeat;mask:var(--g) center/contain no-repeat;flex:none}
+
+/* hero */
+.hero{padding:72px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.45;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 70% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse 70% 60% at 70% 30%,#000 10%,transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;position:relative}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--muted)}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(52px,8vw,104px);line-height:.92;letter-spacing:-.035em;margin:22px 0 18px}
+.hero h1 span{display:block}
+.hero .role{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);font-weight:500;line-height:1.25;letter-spacing:-.01em;max-width:22ch}
+.hero .lede{color:var(--muted);margin:18px 0 28px;max-width:52ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.cred{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:500}
+.cred img,.cred .glyph{width:20px;height:20px}
+
+/* console */
+.console{background:var(--console);color:var(--console-ink);border-radius:18px;box-shadow:0 30px 60px -20px rgba(9,20,45,.45),0 0 0 1px rgba(255,255,255,.06) inset;font-family:var(--mono);font-size:14px;overflow:hidden}
+.console-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07);color:var(--console-dim);font-size:12.5px}
+.console-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.console-bar span{margin-left:10px}
+.console-body{padding:20px 22px 22px;min-height:360px}
+.ln{white-space:pre-wrap;opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s ease;line-height:1.75}
+.ln.on{opacity:1;transform:none}
+.ln .p{color:#7FA4FF}.ln .k{color:#8BE0BC}.ln .d{color:var(--console-dim)}.ln .w{color:#FFC86B}
+.ln .key{display:inline-block;min-width:9ch;color:#fff}
+.cursor{display:inline-block;width:8px;height:16px;background:#7FA4FF;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* logo strip */
+.strip{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;margin-top:56px}
+.strip-track{display:flex;gap:44px;padding:20px 0;width:max-content;animation:scroll 48s linear infinite}
+.strip:hover .strip-track{animation-play-state:paused}
+.strip-item{display:flex;align-items:center;gap:10px;font-weight:500;color:var(--muted);font-size:15px;white-space:nowrap}
+.strip-item img{width:26px;height:26px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:96px 0}
+.sec-head{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:end;margin-bottom:48px}
+.sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.6vw,56px);line-height:1;letter-spacing:-.03em}
+.sec-head p{color:var(--muted);max-width:56ch}
+
+/* four pillars */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden}
+.pillar{padding:28px 24px;border-right:1px solid var(--line)}
+.pillar:last-child{border-right:0}
+.pillar .glyph{width:30px;height:30px;color:var(--signal);margin-bottom:18px}
+.pillar h3{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.pillar p{color:var(--muted);font-size:15.5px}
+.facts{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;color:var(--muted);font-size:15px}
+.facts b{color:var(--ink);font-weight:600}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.skill h3{font-family:var(--display);font-size:21px;font-weight:700;margin-bottom:6px}
+.skill > p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 11px 7px 8px;border-radius:9px;background:var(--paper);border:1px solid var(--line);font-size:14px;font-weight:500}
+.chip img{width:20px;height:20px;object-fit:contain}
+.chip .glyph{width:18px;height:18px;color:var(--signal)}
+.chip .init{width:20px;height:20px;border-radius:5px;background:var(--signal-soft);color:var(--signal);font-size:10px;font-weight:700;display:grid;place-items:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mono{filter:invert(1) brightness(1.4)}}
+:root[data-theme="dark"] .mono{filter:invert(1) brightness(1.4)}
+
+/* process */
+.process{background:var(--ink);color:var(--paper)}
+.process .sec-head p{color:color-mix(in srgb,var(--paper) 70%,transparent)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;list-style:none;counter-reset:s}
+.step{padding:26px 22px 8px 0;border-top:2px solid color-mix(in srgb,var(--paper) 25%,transparent);position:relative;counter-increment:s}
+.step::before{content:counter(s);position:absolute;top:-17px;left:0;width:32px;height:32px;border-radius:50%;background:var(--signal);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center;border:4px solid var(--ink)}
+.step h3{font-family:var(--display);font-size:22px;margin:14px 0 6px}
+.step p{font-size:15px;color:color-mix(in srgb,var(--paper) 72%,transparent)}
+.channels{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.channels > span{color:color-mix(in srgb,var(--paper) 70%,transparent);font-size:15px;margin-right:6px}
+.channel{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--paper) 25%,transparent);font-size:14px}
+.channel .glyph{width:16px;height:16px}
+
+/* experience */
+.timeline{list-style:none;position:relative}
+.timeline::before{content:"";position:absolute;left:180px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.job{display:grid;grid-template-columns:180px 1fr;gap:0 44px;padding-bottom:44px;position:relative}
+.job::after{content:"";position:absolute;left:174px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--signal)}
+.job.current::after{background:var(--signal)}
+.when{font-size:14.5px;color:var(--muted);padding-top:2px;font-weight:500}
+.when b{display:block;color:var(--ink);font-weight:600}
+.job-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 26px}
+.job-card header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:12px}
+.job-card h3{font-family:var(--display);font-size:23px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.org{color:var(--muted);font-size:15px}
+.tag{font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--signal-soft);color:var(--signal);align-self:flex-start}
+.job-card ul{padding-left:20px;display:grid;gap:6px}
+.job-card li{font-size:15.5px}
+.job-card li::marker{color:var(--signal)}
+.job-card .note{margin-top:12px;font-size:14px;color:var(--muted)}
+.job-card .chips{margin-top:16px}
+
+/* creds */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cert{display:flex;gap:18px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.cert-logo{width:58px;height:58px;border-radius:14px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.cert-logo img{width:34px;height:34px}
+.cert-logo .glyph{width:30px;height:30px;color:var(--signal)}
+.cert h3{font-family:var(--display);font-size:20px;font-weight:700;line-height:1.25}
+.cert p{color:var(--muted);font-size:15px;margin-top:4px}
+.cert .meta{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--ok)}
+
+/* contact */
+.contact{padding:110px 0}
+.contact-box{background:var(--signal);color:#fff;border-radius:28px;padding:64px 56px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+.contact-box::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.08)}
+.contact-box h2{font-family:var(--display);font-weight:800;font-size:clamp(36px,5vw,62px);line-height:.98;letter-spacing:-.03em}
+.contact-box p{margin-top:16px;opacity:.88;max-width:46ch}
+.contact-links{display:grid;gap:10px;position:relative;z-index:1}
+.contact-links a{display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:14px;background:rgba(255,255,255,.12);text-decoration:none;font-weight:500;transition:background .15s ease}
+.contact-links a:hover{background:rgba(255,255,255,.22)}
+.contact-links small{display:block;opacity:.75;font-size:13px;font-weight:400}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* responsive */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr 1fr}
+  .pillar:nth-child(2){border-right:0}
+  .pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+  .sec-head{grid-template-columns:1fr;gap:16px}
+  .contact-box{grid-template-columns:1fr;padding:48px 32px}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .nav-actions{margin-left:auto}
+  .skills,.cred-grid,.pillars{grid-template-columns:1fr}
+  .pillar{border-right:0;border-bottom:1px solid var(--line)}
+  .pillar:last-child{border-bottom:0}
+  .steps{grid-template-columns:1fr}
+  .timeline::before{left:7px}
+  .job{grid-template-columns:1fr;padding-left:34px;gap:8px}
+  .job::after{left:1px}
+  section{padding:72px 0}
+  .console-body{min-height:0;font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .ln{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container nav-wrap">
-      <div class="brand">Najmus <span>Sakib</span></div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education & Certifications</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="resume.pdf" target="_blank" class="resume-btn">Resume</a>
-      </nav>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="brand-mark">NS</span><span>Najmus Sakib<small>IT Support Technician</small></span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#process">How I work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch colour theme"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/theme-light-dark.svg)"></span></button>
+      <a class="btn btn-primary btn-sm" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Aspiring IT Support Professional</div>
-          <h1>Helping users solve problems with <span>clear, reliable IT support</span></h1>
-          <p>
-            I’m Najmus Sakib, an IT Support Technician with hands-on experience in troubleshooting,
-            break/fix repair, workstation setup, remote support, documentation, and customer-focused service.
-            I’m building a career in IT support by combining technical skills with communication, adaptability,
-            and real-world support experience.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
-          </div>
-
-          <div class="quick-info">
-            <span>Vancouver, BC</span>
-            <span>•</span>
-            <span>sakibyvr@gmail.com</span>
-            <span>•</span>
-            <span>Open to opportunities</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h3>Quick Overview</h3>
-          <div class="stat">
-            <strong>IT Support</strong>
-            <span>On-site, remote, phone, and client-facing technical support experience.</span>
-          </div>
-          <div class="stat">
-            <strong>Troubleshooting</strong>
-            <span>Hardware, software, operating systems, printers, Wi-Fi, and connectivity issues.</span>
-          </div>
-          <div class="stat">
-            <strong>Professional Focus</strong>
-            <span>Customer support, documentation, ticket handling, and long-term IT career growth.</span>
-          </div>
-        </div>
+<main id="main">
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="status"><span class="pulse" aria-hidden="true"></span>Available now in Vancouver, BC. Open to relocation.</span>
+      <h1><span>Najmus</span><span>Sakib</span></h1>
+      <p class="role">IT support technician who gets people back to work, fast.</p>
+      <p class="lede">Five years across IT support, Tier 2 platform support and field technician work. I swap motherboards, trace connectivity faults, and walk non-technical users through a fix on the phone without making them feel small.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:sakibyvr@gmail.com"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/email-outline.svg)"></span>Email me</a>
+        <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/file-download-outline.svg)"></span>Download resume</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/sakibnyx" target="_blank" rel="noopener"><img src="https://api.iconify.design/logos/linkedin-icon.svg" width="18" height="18" alt="">LinkedIn</a>
       </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">A short professional introduction</p>
-        <div class="glass">
-          <p>
-            I am an IT Support Technician with experience supporting users in fast-paced environments,
-            including MSP work and technical customer support. My background includes hardware repair,
-            operating system troubleshooting, workstation and printer setup, remote support tools, ticketing systems,
-            and basic networking. I enjoy solving technical problems, explaining solutions clearly, and helping users
-            get back to work quickly.
-          </p>
-        </div>
+      <div class="creds">
+        <span class="cred"><img src="https://api.iconify.design/simple-icons/comptia.svg?color=%23C8202F" alt="">CompTIA A+ certified</span>
+        <span class="cred"><img src="https://api.iconify.design/twemoji/flag-canada.svg" alt="">Transport Canada Advanced RPAS</span>
+        <span class="cred"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/school-outline.svg);color:var(--signal)"></span>MSc Security &amp; Digital Forensics</span>
+        <span class="cred"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/car-outline.svg);color:var(--signal)"></span>Valid licence, clean record</span>
       </div>
-    </section>
+    </div>
 
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-subtitle">Technical and professional skills from my experience</p>
+    <div class="console" role="img" aria-label="Animated system check listing Najmus's skills: hardware, operating systems, networking, identity, ticketing, people skills and certifications. Status: ready to start.">
+      <div class="console-bar" aria-hidden="true"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><span>sakib@helpdesk: ~</span></div>
+      <div class="console-body" id="console" aria-hidden="true"></div>
+    </div>
+  </div>
 
-        <div class="skills-grid">
-          <div class="glass skill-card">
-            <h3>Hardware Support</h3>
-            <p>
-              Hardware troubleshooting, desktop and laptop break/fix repairs, assembling and disassembling systems,
-              motherboard, RAM, HDD/SSD upgrades, peripherals support, system performance optimization.
-            </p>
-          </div>
+  <div class="strip" aria-label="Platforms and tools I use">
+    <div class="strip-track" id="strip"></div>
+  </div>
+</header>
 
-          <div class="glass skill-card">
-            <h3>Operating Systems & Software</h3>
-            <p>
-              Windows and macOS troubleshooting, software installation, software configuration,
-              application support, licensing and account-related troubleshooting, Microsoft Office setup.
-            </p>
-          </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Hardware, software, networking and people. I handle all four.</h2>
+      <p>From depot benches in Vancouver to remote desks in Sylhet and drone sites across BC, my job has always been the same: find the real cause, fix it properly, and leave the user confident.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/chip.svg)"></span><h3>Hardware</h3><p>Board, RAM and storage swaps, printers, peripherals, imaging and deployment for new hires.</p></div>
+      <div class="pillar"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/microsoft-windows.svg)"></span><h3>Software</h3><p>Windows, macOS and Linux troubleshooting, Microsoft 365, licensing and account issues.</p></div>
+      <div class="pillar"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/lan.svg)"></span><h3>Networking</h3><p>TCP/IP, DNS, DHCP, Wi-Fi, VPNs and structured cabling for business clients.</p></div>
+      <div class="pillar"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/account-voice.svg)"></span><h3>People</h3><p>Clear, patient explanations by phone, chat or in person, and training for new support staff.</p></div>
+    </div>
+    <div class="facts">
+      <span><b>5 years</b> in IT and technical support</span>
+      <span><b>Tier 2</b> support experience</span>
+      <span><b>Depot, on-site, phone and remote</b> support</span>
+      <span><b>Based in</b> Vancouver, BC</span>
+    </div>
+  </div>
+</section>
 
-          <div class="glass skill-card">
-            <h3>Networking & Connectivity</h3>
-            <p>
-              Basic networking, Wi-Fi troubleshooting, VPN setup and troubleshooting,
-              network connectivity troubleshooting, cabling, basic networking equipment support.
-            </p>
-          </div>
+<!-- SKILLS -->
+<section id="skills" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The toolkit I work with every day.</h2>
+      <p>Platforms, systems and tools from my support, MSP and field work. Grouped the way a service desk thinks about them.</p>
+    </div>
+    <div class="skills" id="skillGrid"></div>
+  </div>
+</section>
 
-          <div class="glass skill-card">
-            <h3>User & Endpoint Support</h3>
-            <p>
-              Workstation setup, printer setup and troubleshooting, scanner support,
-              remote desktop tools, depot service, on-site support, walk-in customer support.
-            </p>
-          </div>
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How I close a ticket.</h2>
+      <p>The same five steps whether it's a walk-in laptop, a Tier 2 escalation or a drone that won't arm on a remote site.</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><h3>Triage</h3><p>Take the request from any channel, set priority against the SLA, and log it from the first minute.</p></li>
+      <li class="step"><h3>Diagnose</h3><p>Reproduce the problem with test scenarios and isolate the root cause, not just the symptom.</p></li>
+      <li class="step"><h3>Fix</h3><p>Repair hardware, OS, network or account issues, or escalate clearly when it's out of scope.</p></li>
+      <li class="step"><h3>Verify</h3><p>Follow up with the user to confirm the fix held, not just that it worked once.</p></li>
+      <li class="step"><h3>Document</h3><p>Write ticket notes, root cause and knowledge base entries so the next tech moves faster.</p></li>
+    </ol>
+    <div class="channels">
+      <span>Channels I support through:</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/tools.svg)"></span>Depot</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/map-marker-outline.svg)"></span>On-site</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/phone-outline.svg)"></span>Phone</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/remote-desktop.svg)"></span>Remote desktop</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/email-outline.svg)"></span>Email</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/chat-outline.svg)"></span>Live chat</span>
+      <span class="channel"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/walk.svg)"></span>Walk-in</span>
+    </div>
+  </div>
+</section>
 
-          <div class="glass skill-card">
-            <h3>Systems & Platforms</h3>
-            <p>
-              Active Directory user and account management, Microsoft 365 support,
-              Google Workspace support, virtual machines, backup and recovery, basic server support.
-            </p>
-          </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Where I've done the work.</h2>
+      <p>Four roles across field operations, MSP support, Tier 2 platform support and in-house IT, in Canada and Bangladesh.</p>
+    </div>
+    <ol class="timeline" id="timeline"></ol>
+  </div>
+</section>
 
-          <div class="glass skill-card">
-            <h3>Ticketing & Documentation</h3>
-            <p>
-              ServiceNow, Zendesk, Jira, ticket documentation, knowledge base writing,
-              service notes, resolution tracking, escalation handling.
-            </p>
-          </div>
+<!-- CREDENTIALS -->
+<section id="credentials" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Certifications and education.</h2>
+      <p>Industry certification for support work, a federal pilot certificate for field operations, and a security-focused master's degree.</p>
+    </div>
+    <div class="cred-grid">
+      <div class="cert"><div class="cert-logo"><img src="https://api.iconify.design/simple-icons/comptia.svg?color=%23C8202F" alt="CompTIA logo"></div><div><h3>CompTIA A+</h3><p>Hardware, operating systems, networking, security and operational procedures.</p><span class="meta">Certified</span></div></div>
+      <div class="cert"><div class="cert-logo"><img src="https://api.iconify.design/twemoji/flag-canada.svg" alt="Canadian flag"></div><div><h3>Transport Canada Advanced RPAS Certificate</h3><p>Advanced drone pilot licence for operations in controlled airspace and near people.</p><span class="meta">Certified</span></div></div>
+      <div class="cert"><div class="cert-logo"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/shield-lock-outline.svg)"></span></div><div><h3>Master's, Computer Security and Digital Forensics</h3><p>Fairleigh Dickinson University, 2023 to 2024. GPA 3.5.</p></div></div>
+      <div class="cert"><div class="cert-logo"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/code-braces.svg)"></span></div><div><h3>Bachelor's, Computer Science</h3><p>Southwest Petroleum University, 2017 to 2021.</p></div></div>
+    </div>
+  </div>
+</section>
 
-          <div class="glass skill-card">
-            <h3>Security & Maintenance</h3>
-            <p>
-              Virus and malware removal, IT security awareness, confidentiality,
-              handling client systems and data according to policy.
-            </p>
-          </div>
-
-          <div class="glass skill-card">
-            <h3>Professional Strengths</h3>
-            <p>
-              Customer service, clear communication, non-technical explanations,
-              teamwork, collaboration, adaptability, fast learning, time management,
-              multitasking, and attention to detail.
-            </p>
-          </div>
-        </div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>Need someone dependable on your service desk?</h2>
+        <p>I'm looking for IT support, desktop support and field technician roles in Vancouver and across Canada. I can start right away, drive to sites, and relocate for the right team.</p>
       </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <h2 class="section-title">Education & Certifications</h2>
-        <p class="section-subtitle">Academic background and current certification path</p>
-
-        <div class="projects-grid">
-          <div class="glass project-card">
-            <h3>Master’s Degree</h3>
-            <p>
-              <strong>Fairleigh Dickinson University</strong><br>
-              Master’s in Computer Security and Digital Forensic Administration<br>
-              GPA: 3.5<br>
-              2024 - 2025
-            </p>
-          </div>
-
-          <div class="glass project-card">
-            <h3>Bachelor’s Degree</h3>
-            <p>
-              <strong>Southwest Petroleum University</strong><br>
-              Bachelor’s in Computer Science<br>
-              2017 - 2021
-            </p>
-          </div>
-
-          <div class="glass project-card">
-            <h3>Certification</h3>
-            <p>
-              <strong>CompTIA A+</strong><br>
-              In Progress
-            </p>
-          </div>
-        </div>
+      <div class="contact-links">
+        <a href="mailto:sakibyvr@gmail.com"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/email-outline.svg)"></span><span>sakibyvr@gmail.com<small>Email</small></span></a>
+        <a href="tel:+17789953172"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/phone-outline.svg)"></span><span>778-995-3172<small>Call or text</small></span></a>
+        <a href="https://www.linkedin.com/in/sakibnyx" target="_blank" rel="noopener"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/linkedin.svg)"></span><span>linkedin.com/in/sakibnyx<small>LinkedIn</small></span></a>
+        <a href="https://github.com/sakibyvr" target="_blank" rel="noopener"><span class="glyph" style="--g:url(https://api.iconify.design/mdi/github.svg)"></span><span>github.com/sakibyvr<small>GitHub</small></span></a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+</main>
 
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Work I want to showcase</p>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Najmus Sakib, Vancouver, BC</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
 
-        <div class="projects-grid">
-          <a href="https://github.com/sakibyvr" target="_blank" class="glass project-card">
-            <h3>IT Support Portfolio</h3>
-            <p>
-              A personal portfolio website built to present my technical background,
-              support skills, project work, and professional contact information.
-            </p>
-            <span class="project-link">View Project →</span>
-          </a>
+<script>
+/* ---------- icon helpers ---------- */
+const MS_BLUE = '#0078D4';
+const icon = id => {const [p,n]=id.split(':');return n.includes('?')?`https://api.iconify.design/${p}/${n.replace('?','.svg?')}`:`https://api.iconify.design/${p}/${n}.svg`;};
+function glyph(id,color){const s=document.createElement('span');s.className='glyph';s.style.setProperty('--g',`url(${icon(id)})`);if(color)s.style.color=color;return s;}
+function logo(ids,label,mono){
+  ids=[].concat(ids);
+  if(ids[0].startsWith('mdi:')) return glyph(ids[0], ids[1]);
+  const img=document.createElement('img');img.alt='';img.loading='lazy';img.width=20;img.height=20;
+  if(mono) img.className='mono';
+  let i=0;img.src=icon(ids[0]);
+  img.onerror=()=>{i++; if(i<ids.length){img.src=icon(ids[i]);} else {const s=document.createElement('span');s.className='init';s.textContent=label.replace(/[^A-Za-z0-9 ]/g,'').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();img.replaceWith(s);}};
+  return img;
+}
+function chip(label,ids,mono){const c=document.createElement('span');c.className='chip';c.append(logo(ids,label,mono),document.createTextNode(label));return c;}
 
-          <a href="https://github.com/sakibyvr" target="_blank" class="glass project-card">
-            <h3>Technical Projects</h3>
-            <p>
-              This section can highlight troubleshooting labs, setup guides,
-              support-related documentation, scripting practice, or system administration projects.
-            </p>
-            <span class="project-link">View Project →</span>
-          </a>
+/* ---------- logo strip ---------- */
+const STRIP=[
+  ['Windows 11',['logos:microsoft-windows-icon','devicon:windows11']],
+  ['macOS',['logos:apple'],true],
+  ['Linux',['logos:linux-tux']],
+  ['Microsoft 365',['logos:microsoft-icon']],
+  ['Entra ID / Azure',['logos:microsoft-azure','devicon:azure']],
+  ['Google Workspace',['logos:google-icon']],
+  ['ServiceNow',['simple-icons:servicenow?color=%2362D84E']],
+  ['Zendesk',['logos:zendesk-icon','simple-icons:zendesk'],true],
+  ['Jira',['logos:jira']],
+  ['TeamViewer',['logos:teamviewer','simple-icons:teamviewer?color=%230E8EE9']],
+  ['VMware',['logos:vmware','simple-icons:vmware?color=%23607078']],
+  ['CompTIA A+',['simple-icons:comptia?color=%23C8202F']]
+];
+const strip=document.getElementById('strip');
+[...STRIP,...STRIP].forEach(([l,ids,mono],k)=>{const d=document.createElement('span');d.className='strip-item';if(k>=STRIP.length)d.setAttribute('aria-hidden','true');const im=logo(ids,l,mono);im.width=26;im.height=26;d.append(im,document.createTextNode(l));strip.append(d);});
 
-          <a href="https://github.com/sakibyvr" target="_blank" class="glass project-card">
-            <h3>GitHub Repository Collection</h3>
-            <p>
-              A central place to showcase hands-on projects, documentation,
-              and technical work that demonstrates practical IT support ability.
-            </p>
-            <span class="project-link">View Project →</span>
-          </a>
-        </div>
-      </div>
-    </section>
+/* ---------- skills ---------- */
+const SKILLS=[
+ {t:'Hardware',p:'Desktop and laptop break/fix down to the component level.',i:[
+  ['Laptop & desktop repair',['mdi:laptop']],['Motherboards',['mdi:chip']],['RAM',['mdi:memory']],['SSD / HDD',['mdi:harddisk']],
+  ['Printers',['mdi:printer-outline']],['Peripherals',['mdi:keyboard-outline']],['Imaging & deployment',['mdi:disc']]]},
+ {t:'Operating systems',p:'Desktop, server and virtualized environments.',i:[
+  ['Windows 10/11',['logos:microsoft-windows-icon','devicon:windows11']],['Windows Server',['devicon:windows11','logos:microsoft-windows-icon']],
+  ['macOS',['logos:apple'],true],['Linux',['logos:linux-tux']],['VMware',['simple-icons:vmware?color=%23607078','logos:vmware']],['Hyper-V',['logos:microsoft-icon']]]},
+ {t:'Networking',p:'Finding where the connection actually breaks.',i:[
+  ['TCP/IP',['mdi:lan']],['DNS',['mdi:dns-outline']],['DHCP',['mdi:ip-network-outline']],['Wi-Fi',['mdi:wifi']],
+  ['Routers & switches',['mdi:router-network']],['Structured cabling',['mdi:ethernet-cable']],['VPN setup',['mdi:vpn']],['Firewall basics',['mdi:wall-fire']]]},
+ {t:'Identity & cloud',p:'Accounts, access and productivity suites.',i:[
+  ['Active Directory',['mdi:account-group-outline',MS_BLUE]],['Entra ID / Azure AD',['logos:microsoft-azure','devicon:azure']],['Group Policy',['mdi:shield-account-outline',MS_BLUE]],
+  ['Microsoft 365 admin',['logos:microsoft-icon']],['Exchange',['vscode-icons:file-type-outlook','logos:microsoft-icon']],['Google Workspace',['logos:google-icon']],['MFA',['mdi:shield-key-outline']]]},
+ {t:'Security & recovery',p:'Keeping endpoints clean, patched and recoverable.',i:[
+  ['Endpoint protection',['mdi:shield-check-outline']],['Malware removal',['mdi:virus-off-outline']],['Patch management',['mdi:update']],
+  ['Backup & recovery',['mdi:backup-restore']],['Disk encryption',['mdi:lock-outline']]]},
+ {t:'Tools & process',p:'Ticketing, remote access and documented escalation.',i:[
+  ['ServiceNow',['simple-icons:servicenow?color=%2362D84E']],['Zendesk',['logos:zendesk-icon','simple-icons:zendesk'],true],['Jira',['logos:jira']],
+  ['TeamViewer',['logos:teamviewer','simple-icons:teamviewer?color=%230E8EE9']],['RDP',['mdi:remote-desktop']],['SLA ticketing',['mdi:ticket-confirmation-outline']],
+  ['Knowledge base docs',['mdi:book-open-variant']],['ITIL-aligned escalation',['mdi:stairs-up']]]}
+];
+const grid=document.getElementById('skillGrid');
+SKILLS.forEach(s=>{const c=document.createElement('article');c.className='skill';c.innerHTML=`<h3>${s.t}</h3><p>${s.p}</p>`;const ch=document.createElement('div');ch.className='chips';s.i.forEach(([l,ids,m])=>ch.append(chip(l,ids,m)));c.append(ch);grid.append(c);});
 
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">Let’s connect professionally</p>
+/* ---------- experience ---------- */
+const JOBS=[
+ {cur:true,from:'Jul 2026',to:'Present',role:'Technician / Drone Pilot',org:'Skydweller Technologies, Vancouver, BC',tag:'Field',b:[
+  'Operate and maintain drone systems under Transport Canada regulations, with pre-flight and post-flight checks and routine maintenance.',
+  'Run firmware updates, calibration and diagnostics on drones, controllers and payload sensors, troubleshooting faults in the field without depot support.',
+  'Diagnose hardware failures across flight controllers, batteries, gimbals and camera payloads, documenting root cause for each incident.',
+  'Move large aerial datasets from capture to delivery, managing file integrity, storage media and backups across local and cloud storage.',
+  'Plan flights, assess sites and apply risk mitigation at remote and urban locations across BC, keeping logs to Transport Canada standards.'],
+  t:[['Firmware & diagnostics',['mdi:chip']],['Data integrity & backup',['mdi:backup-restore']],['Field troubleshooting',['mdi:quadcopter']]]},
+ {from:'Feb 2026',to:'Apr 2026',role:'Junior IT Support Technician',org:'PCTECH Computer Services Inc., Vancouver, BC',tag:'MSP',b:[
+  'Diagnosed and repaired desktops and laptops, resolving hardware, OS, software and licensing issues through depot, on-site, phone and remote support.',
+  'Set up workstations, printers, peripherals, Wi-Fi and cabling for business clients across the Lower Mainland.',
+  'Triaged walk-in and phone requests, documented every job in ticket notes, escalated out-of-scope issues, and handled client data under confidentiality policies.'],
+  note:'Role eliminated in restructuring. Professional references available.',
+  t:[['Windows',['logos:microsoft-windows-icon']],['Printers',['mdi:printer-outline']],['Wi-Fi & cabling',['mdi:wifi']]]},
+ {from:'Apr 2025',to:'Feb 2026',role:'Level 2 Technical Customer Support Agent',org:'Diamond Interactive, Vancouver, BC',tag:'Tier 2',b:[
+  'Resolved Tier 2 technical and account issues by email, live chat and ticketing, following up to confirm each fix held.',
+  'Reproduced user-reported bugs with test scenarios to isolate root cause, and reported findings to developers and vendors.',
+  'Trained and onboarded new support staff on troubleshooting steps and system workflows.'],
+  t:[['Ticketing',['mdi:ticket-confirmation-outline']],['Bug reproduction',['mdi:bug-check-outline']],['Staff training',['mdi:account-school-outline']]]},
+ {from:'Jan 2022',to:'Aug 2022',role:'System Support Technician',org:'Oqtave, Sylhet, Bangladesh',tag:'In-house IT',b:[
+  'Replaced motherboards, RAM and HDD/SSDs, installed Windows and MS Office, configured virtual machines, and set up desktops, printers and scanners for new hires.',
+  'Supported users remotely through TeamViewer, logging and tracking tickets in ServiceNow and Zendesk.'],
+  t:[['TeamViewer',['logos:teamviewer','simple-icons:teamviewer?color=%230E8EE9']],['ServiceNow',['simple-icons:servicenow?color=%2362D84E']],['Zendesk',['logos:zendesk-icon','simple-icons:zendesk'],true],['Microsoft Office',['logos:microsoft-icon']]]}
+];
+const tl=document.getElementById('timeline');
+JOBS.forEach(j=>{
+  const li=document.createElement('li');li.className='job'+(j.cur?' current':'');
+  li.innerHTML=`<div class="when"><b>${j.from}</b>to ${j.to}</div><div class="job-card"><header><div><h3>${j.role}</h3><div class="org">${j.org}</div></div><span class="tag">${j.tag}</span></header><ul>${j.b.map(x=>`<li>${x}</li>`).join('')}</ul>${j.note?`<p class="note">${j.note}</p>`:''}<div class="chips"></div></div>`;
+  const ch=li.querySelector('.chips');j.t.forEach(([l,ids,m])=>ch.append(chip(l,ids,m)));tl.append(li);
+});
 
-        <div class="contact-grid">
-          <div class="glass contact-card">
-            <h3>Email</h3>
-            <p><a href="mailto:sakibyvr@gmail.com">sakibyvr@gmail.com</a></p>
-          </div>
+/* ---------- hero console ---------- */
+const LINES=[
+ '<span class="p">$</span> sakib --run-diagnostics',
+ '<span class="d">Running system check on candidate…</span>',
+ '<span class="k">✓</span> <span class="key">hardware</span> break/fix, boards, RAM, storage, imaging',
+ '<span class="k">✓</span> <span class="key">os</span> Windows 10/11, macOS, Linux, Windows Server',
+ '<span class="k">✓</span> <span class="key">network</span> TCP/IP, DNS, DHCP, Wi-Fi, VPN, cabling',
+ '<span class="k">✓</span> <span class="key">identity</span> Active Directory, Entra ID, Microsoft 365',
+ '<span class="k">✓</span> <span class="key">tickets</span> ServiceNow, Zendesk, Jira, ITIL escalation',
+ '<span class="k">✓</span> <span class="key">people</span> explains fixes without the jargon',
+ '<span class="k">✓</span> <span class="key">certs</span> CompTIA A+, Transport Canada Advanced RPAS',
+ '<span class="d">────────────────────────────────────────</span>',
+ '<span class="w">●</span> <span class="key">status</span> 0 issues found. Ready to start.',
+ '<span class="p">$</span> <span class="cursor"></span>'
+];
+const con=document.getElementById('console');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+LINES.forEach((h,i)=>{const d=document.createElement('div');d.className='ln';d.innerHTML=h;con.append(d);
+  if(reduce)d.classList.add('on');else setTimeout(()=>d.classList.add('on'),350+i*(i<2?450:330));});
 
-          <div class="glass contact-card">
-            <h3>LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/in/sakibnyx" target="_blank">linkedin.com/in/sakibnyx</a></p>
-          </div>
-
-          <div class="glass contact-card">
-            <h3>GitHub</h3>
-            <p><a href="https://github.com/sakibyvr" target="_blank">github.com/sakibyvr</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 Najmus Sakib. All rights reserved.
-  </footer>
+/* ---------- theme toggle ---------- */
+const root=document.documentElement;
+document.getElementById('themeBtn').addEventListener('click',()=>{
+  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+});
+</script>
 </body>
 </html>
